@@ -1,6 +1,8 @@
 import React, { memo, useState, useEffect } from 'react'
 
 import hyRequest from '@/services'
+import { HomeWapper } from './style'
+import HomeBanner from './c-cpns/home-banner'
 
 const Home = memo(() => {
     const [highScore, setHighScore] = useState({})
@@ -13,17 +15,9 @@ const Home = memo(() => {
     }, [])
 
     return (
-        <div>
-            <h2>{ highScore.title }</h2>
-            <h3>{ highScore.subtitle }</h3>
-            <ul>
-                {
-                    highScore?.list?.map(item => {
-                        return <li key={item.id}>{item.name}</li>
-                    })
-                }
-            </ul>
-        </div>
+        <HomeWapper>
+            <HomeBanner />
+        </HomeWapper>
     )
 })
 

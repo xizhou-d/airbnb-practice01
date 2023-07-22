@@ -1,6 +1,7 @@
 import React, { memo } from 'react'
-import HelloWorld from 'components/hello-world'
 import { Link, useRoutes, useNavigate } from 'react-router-dom'
+import AppHeader from 'components/app-header'
+import AppFooter from 'components/app-footer'
 
 import routes from '@/route'
 
@@ -12,11 +13,11 @@ import routes from '@/route'
 const App = memo(() => {
     return (
         <div className='app'>
-            <div className='header'>header</div>
+            <AppHeader />
             <div className='content'>
                 { useRoutes(routes) }
             </div>
-            <div className='footer'>footer</div>
+            <AppFooter />
         </div>
     )
 })
