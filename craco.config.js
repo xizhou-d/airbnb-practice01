@@ -18,6 +18,11 @@ module.exports = {
             },
         },
     ],
+    resolve: {
+        alias: {
+            '@mui/styled-engine': '@mui/styled-engine-sc'
+        },
+    },
     // webpack
     webpack: {
         alias: {

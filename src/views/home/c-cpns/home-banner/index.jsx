@@ -4,7 +4,7 @@ import { HomeBannerWapper } from './style'
 
 const HomeBanner = memo(() => {
   return (
-    <HomeBannerWapper>index</HomeBannerWapper>
+    <HomeBannerWapper>HomeBanner</HomeBannerWapper>
   )
 })
 
