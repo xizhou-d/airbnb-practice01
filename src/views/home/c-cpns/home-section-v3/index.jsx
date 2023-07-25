@@ -1,23 +1,21 @@
 import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 
-import { HomeSectionWrapperV3 } from './style'
 import SectionHeader from '@/components/section-header'
-import ScrollView from '@/base-ui/scroll-view';
-import LongForItem from '@/components/longfor-item';
+import { HomeSectionWrapperV3 } from './style'
+import RoomItem from '@/components/room-item'
+import ScrollView from '@/base-ui/scroll-view'
 
 const HomeSectionV3 = memo((props) => {
     const { data } = props
     return (
         <HomeSectionWrapperV3>
-            <SectionHeader title={data?.title} subTitle={data.subtitle} />
-            <div className='long-for'>
+            <SectionHeader title={data.title} subTitle={data.subtitle} />
+            <div className="room-list">
                 <ScrollView>
                     {
                         data?.list?.map((item, index) => {
-                            return (
-                                <LongForItem item={item} key={index} />
-                            )
+                            return <RoomItem key={index} itemData={item} itemwidth='25%'></RoomItem>
                         })
                     }
                 </ScrollView>
@@ -26,8 +24,6 @@ const HomeSectionV3 = memo((props) => {
     )
 })
 
-HomeSectionV3.propTypes = {
-    data: PropTypes.object
-}
+HomeSectionV3.propTypes = {}
 
 export default HomeSectionV3

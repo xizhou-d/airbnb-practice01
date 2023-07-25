@@ -1,8 +1,14 @@
 import React, { memo } from 'react'
 
+import { EntireWrapper } from './style'
+
 const Entire = memo(() => {
   return (
-    <div>Entire Page.</div>
+    <EntireWrapper>
+        <div className="filter">Filter.</div>
+        <div className="rooms">Room.</div>
+        <div className="pagination">Pagination</div>
+    </EntireWrapper>
   )
 })
 
