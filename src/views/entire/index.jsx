@@ -1,15 +1,30 @@
-import React, { memo } from 'react'
+import React, { memo, useEffect } from 'react'
+import { shallowEqual, useDispatch, useSelector } from 'react-redux'
 
 import { EntireWrapper } from './style'
+import EntireFilter from './entire-filter'
+import EntireRooms from './entire-rooms'
+import EntirePagination from './entire-pagination'
+import { fetchEntireDataAction } from '@/store/modules/entire/createActions'
 
 const Entire = memo(() => {
-  return (
-    <EntireWrapper>
-        <div className="filter">Filter.</div>
-        <div className="rooms">Room.</div>
-        <div className="pagination">Pagination</div>
-    </EntireWrapper>
-  )
+    const { curPage } = useSelector((state) => ({
+        curPage: state.entire.curPage
+    }), shallowEqual)
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch(fetchEntireDataAction())
+    }, [dispatch])
+
+    return (
+        <EntireWrapper>
+            <EntireFilter />
+            <EntireRooms />
+            <EntirePagination />
+        </EntireWrapper>
+    )
 })
 
 export default Entire
