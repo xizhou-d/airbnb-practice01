@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const RoomWrapper = styled.div`
     box-sizing: border-box;
-    width: 25%;
+    width: ${props => props.itemwidth || '25%'};
     padding: 8px;
 
     .inner {
@@ -17,7 +17,6 @@ export const RoomWrapper = styled.div`
         overflow: hidden;
 
         img {
-            width: 100%;
             position: absolute;
             left: 0;
             top: 0;
@@ -29,7 +28,7 @@ export const RoomWrapper = styled.div`
         margin: 10px 0 5px;
         font-size: 12px;
         font-weight: 700;
-        color: ${props => props.verifyColor};
+        color: ${props => props.verifycolor};
       }
     
       .name {

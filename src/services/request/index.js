@@ -29,6 +29,4 @@ class HYRequest {
     }
 }
 
-console.log('BASE_URL', BASE_URL)
-
 export default new HYRequest(BASE_URL, TIME_OUT) 
