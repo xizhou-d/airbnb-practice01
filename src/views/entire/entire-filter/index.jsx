@@ -27,8 +27,9 @@ const EntireFilter = memo((props) => {
                         return (
                             <div
                                 className={classNames('item', { active: selectItems.includes(item) })}
-                                key={index}
-                                onClick={(e) => handleClick(item)}>
+                                key={item + index}
+                                onClick={(e) => handleClick(item)}
+                            >
                                 {item}
                             </div>
                         )

@@ -15,7 +15,7 @@ const HomeSectionV3 = memo((props) => {
                 <ScrollView>
                     {
                         data?.list?.map((item, index) => {
-                            return <RoomItem key={index} itemData={item} itemwidth='25%'></RoomItem>
+                            return <RoomItem key={item + index} itemData={item} itemwidth='25%'></RoomItem>
                         })
                     }
                 </ScrollView>

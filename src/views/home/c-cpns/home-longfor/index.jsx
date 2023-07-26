@@ -16,7 +16,7 @@ const HomeLongFor = memo((props) => {
                     {
                         data?.list?.map((item, index) => {
                             return (
-                                <LongForItem item={item} key={index} />
+                                <LongForItem item={item} key={item + index} />
                             )
                         })
                     }

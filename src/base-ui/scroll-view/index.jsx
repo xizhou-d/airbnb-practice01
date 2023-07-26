@@ -19,7 +19,6 @@ const ScrollView = memo((props) => {
         const clientWidth = scrollContentRef.current.clientWidth
         const totalDistance = scrollWidth - clientWidth
         totalDistanceRef.current = totalDistance
-        console.log('99999', scrollWidth, clientWidth, totalDistance, scrollContentRef.current.children.length)
 
         setShowRightButton(totalDistance > 0)
     }, [props.children])
@@ -32,8 +31,6 @@ const ScrollView = memo((props) => {
         const newIndex = isRight ? posIndex + 1 : posIndex - 1
         const newEl = scrollContentRef.current.children[newIndex]
         const newElOffsetLeft = newEl.offsetLeft
-        console.log('0000000', newElOffsetLeft)
-        console.log('totalDistanceRef.current', totalDistanceRef.current)
         scrollContentRef.current.style.transform = `translate(-${newElOffsetLeft}px)`
         setPosIndex(newIndex)
         // 是否继续显示右侧按钮
