@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 import Pagination from '@mui/material/Pagination';
 import { shallowEqual, useDispatch, useSelector } from 'react-redux';
@@ -39,7 +38,5 @@ const EntirePagination = memo((props) => {
         </PaginationWrapper>
     )
 })
-
-EntirePagination.propTypes = {}
 
 export default EntirePagination

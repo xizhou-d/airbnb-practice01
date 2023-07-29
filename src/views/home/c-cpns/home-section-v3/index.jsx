@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 
 import SectionHeader from '@/components/section-header'
@@ -23,7 +22,5 @@ const HomeSectionV3 = memo((props) => {
         </HomeSectionWrapperV3>
     )
 })
-
-HomeSectionV3.propTypes = {}
 
 export default HomeSectionV3

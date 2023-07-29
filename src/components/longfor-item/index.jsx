@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 
 import { LongForItemWapper } from './style'
@@ -17,7 +16,5 @@ const LongForItem = memo((props) => {
         </LongForItemWapper>
     )
 })
-
-LongForItem.propTypes = {}
 
 export default LongForItem

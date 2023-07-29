@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 
 import { DetailTitleWrapper } from './style'
@@ -8,7 +7,5 @@ const DetailTitle = memo((props) => {
     <DetailTitleWrapper>DetailTitle</DetailTitleWrapper>
   )
 })
-
-DetailTitle.propTypes = {}
 
 export default DetailTitle

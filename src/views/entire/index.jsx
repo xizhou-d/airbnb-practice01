@@ -1,5 +1,5 @@
 import React, { memo, useEffect } from 'react'
-import { shallowEqual, useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { EntireWrapper } from './style'
 import EntireFilter from './entire-filter'
@@ -14,7 +14,7 @@ const Entire = memo(() => {
     useEffect(() => {
         dispatch(fetchEntireDataAction())
         dispatch(changeHeadConfigAction({ isFixed: true }))
-    }, [])
+    }, [dispatch])
 
     return (
         <EntireWrapper>

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo, useState } from 'react'
 import { shallowEqual, useSelector } from 'react-redux'
 
@@ -46,7 +45,5 @@ const DetailPictrures = memo((props) => {
         </DetailPicturesWrapper>
     )
 })
-
-DetailPictrures.propTypes = {}
 
 export default DetailPictrures

@@ -1,5 +1,5 @@
 import React, { memo } from 'react'
-import { Link, useRoutes, useNavigate, useLocation } from 'react-router-dom'
+import { useRoutes } from 'react-router-dom'
 import AppHeader from 'components/app-header'
 import AppFooter from 'components/app-footer'
 

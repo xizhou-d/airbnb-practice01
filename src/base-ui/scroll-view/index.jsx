@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo, useState, useEffect, useRef } from 'react'
 
 import { ScrollViewWrapper } from './style'
@@ -58,7 +57,5 @@ const ScrollView = memo((props) => {
         </ScrollViewWrapper>
     )
 })
-
-ScrollView.propTypes = {}
 
 export default ScrollView 

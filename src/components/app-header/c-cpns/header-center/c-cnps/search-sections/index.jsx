@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 
 import { SearchSectionWrapper } from './style'
@@ -21,6 +20,5 @@ const SearchSections = memo((props) => {
         </SearchSectionWrapper>
     )
 })
-SearchSections.propTypes = {}
 
 export default SearchSections

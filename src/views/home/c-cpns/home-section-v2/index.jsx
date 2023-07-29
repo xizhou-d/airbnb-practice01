@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo, useState, useCallback } from 'react'
 
 import { HomeSectionWrapperV2 } from './style'
@@ -20,7 +19,7 @@ const HomeSectionV2 = memo((props) => {
     /** 事件处理函数 */
     const tabClick = useCallback((name, index) => {
         setName(name)
-    })
+    }, [])
 
     return (
         <HomeSectionWrapperV2>
@@ -31,7 +30,5 @@ const HomeSectionV2 = memo((props) => {
         </HomeSectionWrapperV2>
     )
 })
-
-HomeSectionV2.propTypes = {}
 
 export default HomeSectionV2

@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo } from 'react'
 import { useNavigate } from 'react-router-dom'
 
@@ -28,7 +27,5 @@ const SectionFooter = memo((props) => {
         </SectionFooterWrapper>
     )
 })
-
-SectionFooter.propTypes = {}
 
 export default SectionFooter

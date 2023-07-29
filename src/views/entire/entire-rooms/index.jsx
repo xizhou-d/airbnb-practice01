@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types'
 import React, { memo, useCallback } from 'react'
 
 import { RoomsWrapper } from './style'
@@ -20,7 +19,7 @@ const EntireRooms = memo((props) => {
     const itemClick = useCallback((detailData) => {
         dispatch(changeDetailInfoAction(detailData))
         navigate('/detail')
-    }, [])
+    }, [dispatch, navigate])
     return (
         <RoomsWrapper>
             <div className='title'>{totalCount}多处住房</div>
@@ -36,7 +35,5 @@ const EntireRooms = memo((props) => {
         </RoomsWrapper>
     )
 })
-
-EntireRooms.propTypes = {}
 
 export default EntireRooms
