@@ -9,6 +9,7 @@ import HomeSectionV2 from './c-cpns/home-section-v2'
 import HomeSectionV3 from './c-cpns/home-section-v3'
 import HomeLongFor from './c-cpns/home-longfor'
 import { isEmptyObject } from '@/utils/isEmptyObject'
+import { changeHeadConfigAction } from '@/store/modules/main'
 
 const Home = memo(() => {
     // 获取数据
@@ -25,6 +26,7 @@ const Home = memo(() => {
 
     useEffect(() => {
         dispatch(fetchHomeDataAction())
+        dispatch(changeHeadConfigAction({ isFixed: true, alpha: true }))
     }, [dispatch])
 
     return (

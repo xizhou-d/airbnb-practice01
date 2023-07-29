@@ -1,14 +1,20 @@
 import PropTypes from 'prop-types'
-import React, { memo } from 'react'
-import { useSelector } from 'react-redux'
+import React, { memo, useState } from 'react'
+import { shallowEqual, useSelector } from 'react-redux'
 
 import { DetailPicturesWrapper } from './style'
+import PictureBrowser from '@/base-ui/picture-browser'
+import IconShowAllPic from '@/assets/svg/icon_show_all_pic'
 
 const DetailPictrures = memo((props) => {
+    const [showBrowser, setShowBrowser] = useState(false)
     const { detailInfo } = useSelector((state) => ({
         detailInfo: state.detail.detailInfo
-    }))
-    console.log('detailInfo', detailInfo)
+    }), shallowEqual)
+
+    function handleBrowserClose() {
+        setShowBrowser(false)
+    }
 
     return (
         <DetailPicturesWrapper>
@@ -23,7 +29,7 @@ const DetailPictrures = memo((props) => {
                     {
                         detailInfo?.picture_urls.slice(1, 5).map((item, index) => {
                             return (
-                                <div>
+                                <div key={index}>
                                     <img src={item} alt="" />
                                     <div className="cover"></div>
                                 </div>
@@ -32,6 +38,11 @@ const DetailPictrures = memo((props) => {
                     }
                 </div>
             </div>
+            <div className="show-all-btn" onClick={e => setShowBrowser(true)}>
+                <IconShowAllPic />
+                <span>显示所有图片</span>
+            </div>
+            { showBrowser && <PictureBrowser pictureUrls={detailInfo.picture_urls} handleBrowserClose={handleBrowserClose} />}
         </DetailPicturesWrapper>
     )
 })

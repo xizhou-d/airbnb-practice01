@@ -6,17 +6,15 @@ import EntireFilter from './entire-filter'
 import EntireRooms from './entire-rooms'
 import EntirePagination from './entire-pagination'
 import { fetchEntireDataAction } from '@/store/modules/entire/createActions'
+import { changeHeadConfigAction } from '@/store/modules/main'
 
 const Entire = memo(() => {
-    const { curPage } = useSelector((state) => ({
-        curPage: state.entire.curPage
-    }), shallowEqual)
-
     const dispatch = useDispatch()
 
     useEffect(() => {
         dispatch(fetchEntireDataAction())
-    }, [dispatch])
+        dispatch(changeHeadConfigAction({ isFixed: true }))
+    }, [])
 
     return (
         <EntireWrapper>
