@@ -15,7 +15,6 @@ const App = memo(() => {
     useScrollTop()
     return (
         <div className='app'>
-            hahahahh
             <AppHeader />
             <Suspense fallback='loading…… '>
                 <div className='content'>
